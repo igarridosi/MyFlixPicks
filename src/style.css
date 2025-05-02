@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@theme{
+  --color-beis: #fdf6e3;
+  --color-darkblue: #1f2833;
+  --color-dishmaster: #ffbd59;
+  --color-cinematic-bg: #fdf6e3;
+}
+
+@layer utilities {
+  .shadow-custom {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+}
+
+:root {
+  --color-beis: #fdf6e3;
+  --color-darkblue: #1f2833;
+  --color-dishmaster: #ffbd59;
+}
+
+.dark {
+  --color-beis: #1f2833;
+  --color-darkblue: #fdf6e3;
+  --color-dishmaster: #ffbd59;
+}
+
+.bg-beis {
+  background-color: var(--color-beis) !important;
+  color: var(--color-darkblue) !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dark body, .dark .bg-beis {
+  background-color: var(--color-beis) !important;
+  color: var(--color-darkblue) !important;
+}
+
+.bg-darkblue {
+  background-color: var(--color-darkblue) !important;
+  color: var(--color-beis) !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dark .bg-darkblue {
+  background-color: var(--color-darkblue) !important;
+  color: var(--color-beis) !important;
+}
+
+.text-darkblue {
+  color: var(--color-darkblue) !important;
+}
+
+.text-beis {
+  color: var(--color-beis) !important;
+}
+
+button, .rounded-4xl, .shadow-custom, .menu li {
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url(/images/filmIlustration.png);
+  filter: blur(5px);
+  z-index: -1;
+  transition: background-image 0.3s;
+}
+
+.dark body::before {
+  background-image: url(/images/filmIlustration_light.png);
+}
+
+body {
+    background-color: #1f2833;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.menu li {
+  color: var(--color-darkblue);
+  position: relative;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  z-index: 0;
+}
+
+.menu li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0px 15px 0px 10px;
+  background: var(--color-dishmaster);  
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.menu li:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.dark .menu li {
+  color: var(--color-darkblue);
+}
+
+.dark .menu li::before {
+  background: var(--color-dishmaster);
+}
+
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 6px solid var(--color-dishmaster);
+  border-top: 6px solid var(--color-darkblue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.movie-card, .custom-list, .recent-movie-card {
+  transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+  background-color: var(--color-beis) !important;
+  color: var(--color-darkblue) !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+  border-radius: 1.25rem;
+  border: 1.5px solid rgba(31,40,51,0.08);
+}
+
+.dark .movie-card, .dark .custom-list, .dark .recent-movie-card {
+  background-color: #232b36 !important;
+  color: var(--color-beis) !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.22);
+  border: 1.5px solid rgba(253,246,227,0.08);
+}
+
+.movie-card:hover, .custom-list:hover, .recent-movie-card:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.menu-header, nav {
+  background-color: var(--color-beis) !important;
+  color: var(--color-darkblue) !important;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  border-radius: 2rem;
+}
+
+input, select {
+  background-color: var(--color-beis) !important;
+  color: var(--color-darkblue) !important;
+  border: 2.5px solid var(--color-darkblue) !important;
+  font-weight: 800; 
+}
+
+input::placeholder {
+  color: #b3b3b3;
+  opacity: 1;
+}
+
+.dark input, .dark select {
+  background-color: var(--color-darkblue) !important;
+  color: var(--color-beis) !important;
+  border: 2.5px solid var(--color-dishmaster) !important;
+}
+
+.dark input::placeholder {
+  color: #888;
+}
+
+#search-btn, #toggle-favorites {
+  background-color: var(--color-dishmaster) !important;
+  color: var(--color-darkblue) !important;
+  font-weight: bold;
+  border: none;
+}
+
+#search-btn:hover, #toggle-favorites:hover, button:hover {
+  background-color: #96969683 !important;
+  color: var(--color-darkblue) !important;
+}
