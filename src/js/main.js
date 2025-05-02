@@ -15,7 +15,7 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const root = document.documentElement;
 const listSelect = document.getElementById('list-select');
 const addListBtn = document.getElementById('add-list-btn');
-const listTitle = document.querySelector('h2.text-xl.font-bold.mb-2');
+const listTitle = document.querySelector('h2.text-3xl.font-bold.mb-4');
 const reloadBtn = document.getElementById('reload-page-btn');
 
 // --- Utility Functions ---

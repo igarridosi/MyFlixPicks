@@ -27,7 +27,7 @@ export function setupSearchFilterBar({
   const typeSelect = document.getElementById('filter-type');
   const sortMainSelect = document.getElementById('sort-main');
   const favToggleBtn = document.getElementById('toggle-favorites');
-  const trendingTitle = document.querySelector('h1.text-2xl.font-bold.mb-2');
+  const trendingTitle = document.querySelector('h1.text-3xl.font-bold.mb-6');
 
   // Debounce utility
   function debounce(fn, delay) {

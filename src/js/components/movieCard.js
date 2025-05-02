@@ -67,7 +67,7 @@ posterWrapper.className = 'relative mb-2';
 const poster = document.createElement('img');
 poster.src = movie.poster_path ? `${TMDB_IMG_BASE}${movie.poster_path}` : '/images/movie-background-collage.jpg';
 poster.alt = getTitle(movie);
-poster.className = 'w-40 h-60 object-cover rounded-lg shadow';
+poster.className = 'w-50 h-70 object-cover rounded-lg shadow';
 posterWrapper.appendChild(poster);
 
 // TMDB rating badge (right top)
@@ -95,7 +95,7 @@ const inAnyList = lists.some(list => list.movies.some(m => m.id === movie.id));
 // Add to List (+) button (only if not in any list)
 if (!inAnyList) {
     const addBtn = document.createElement('button');
-    addBtn.className = 'absolute top-2 left-2 bg-dishmaster text-darkblue rounded-full w-8 h-8 flex items-center justify-center shadow hover:scale-110 transition z-20';
+    addBtn.className = 'absolute top-1 left-13 bg-dishmaster text-darkblue rounded-full w-9 h-9 flex items-center justify-center shadow hover:scale-105 transition z-20';
     addBtn.innerHTML = `<span class="text-xl font-bold">+</span>`;
     addBtn.title = 'Save to list';
     addBtn.onclick = e => {

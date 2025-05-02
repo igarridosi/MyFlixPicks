@@ -30,7 +30,7 @@
       </nav>
       <section class="p-6 border-0 mt-6 bg-beis m-5 py-5 rounded-4xl">
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-xl font-bold mb-2">Your Lists</h2>
+          <h2 class="text-3xl font-bold mb-4">Your Lists</h2>
           <div class="flex items-center gap-2">
             <select id="list-select" class="px-2 py-1 rounded border border-darkblue bg-beis text-darkblue"></select>
             <button id="add-list-btn" class="px-3 py-1 bg-darkblue text-white rounded hover:bg-blue-700 transition" aria-label="Add new custom list">+ New List</button>
@@ -42,39 +42,56 @@
       <main class="bg-beis m-5 py-0 border-0 rounded-4xl">
         <section class="p-6">
           <!-- Improved Filter and Search Bar UI -->
-          <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6 bg-beis rounded-xl shadow p-4">
-            <div class="flex flex-row items-center gap-2 w-full md:w-auto">
-              <input id="search-input" type="text" placeholder="Search for a movie..." class="border border-gray-300 rounded-l px-4 py-2 w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
-              <button id="search-btn" class="bg-darkblue text-white px-6 py-2.5 rounded-r hover:bg-blue-700 transition font-semibold">Search</button>
+          <div class="flex flex-col md:flex-row items-center justify-around gap-4 mb-6 bg-beis rounded-xl shadow p-4">
+            <div class="flex flex-row items-center w-full md:w-auto">
+              <div class="flex flex-col">
+                <label for="sort-main">Search Bar:</label>
+                <input id="search-input" type="text" placeholder="Search for a movie..." class="border border-gray-300 rounded-l px-4 py-2 w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+              </div>
+              
+              <button id="search-btn" class="bg-darkblue text-white px-6 py-2.5 rounded-r hover:bg-blue-700 transition font-semibold self-end">Search</button>
             </div>
-            <div class="flex flex-wrap gap-2 items-center justify-end w-full md:w-auto">
-              <select id="sort-main" class="border border-gray-300 rounded px-2 py-1 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-                <option value="date-desc" selected>Date: Newest to Oldest</option>
-                <option value="date-asc">Date: Oldest to Newest</option>
-                <option value="rating-desc">Rating: High to Low</option>
-                <option value="rating-asc">Rating: Low to High</option>
-              </select>
-              <input id="filter-year" type="number" min="1900" max="2100" placeholder="Year" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
-              <select id="filter-genre" class="border border-gray-300 rounded px-2 py-1 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-                <option value="">All Genres</option>
-                <!-- Genres will be populated dynamically -->
-              </select>
-              <select id="filter-type" class="border border-gray-300 rounded px-2 py-1 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-                <option value="all" selected>All</option>
-                <option value="movie">Movie</option>
-                <option value="tv">TV Show</option>
-                <option value="documentary">Documentary</option>
-              </select>
-              <button id="toggle-favorites" class="flex items-center gap-2 bg-[#1f2833] text-[#fdf6e3] px-7 py-2 rounded-full shadow-lg font-bold hover:scale-103 hover:bg-[#232f3e] transition drop-shadow-lg ml-3">
+            <div class="flex flex-wrap gap-4 items-center justify-end w-full md:w-auto">
+              <div class="flex items-center space-x-2">
+                <label for="sort-main">Sort:</label>
+                <select id="sort-main" class="border border-gray-300 rounded px-2 py-1 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                  <option value="date-desc" selected>Date: Newest to Oldest</option>
+                  <option value="date-asc">Date: Oldest to Newest</option>
+                  <option value="rating-desc">Rating: High to Low</option>
+                  <option value="rating-asc">Rating: Low to High</option>
+                </select>
+              </div>
+              <div class="flex items-center space-x-2">
+                <label for="filter-year">Year:</label>
+                <input id="filter-year" type="number" min="1900" max="2100" placeholder="Year" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+              </div>
+              <div class="flex items-center space-x-2">
+                <label for="filter-genre">Genre:</label>
+                <select id="filter-genre" class="border border-gray-300 rounded px-2 py-1 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                  <option value="">All Genres</option>
+                  <!-- Genres will be populated dynamically -->
+                </select>
+              </div>
+              <div class="flex items-center space-x-2">
+                <label for="filter-type">Type:</label>
+                <select id="filter-type" class="border border-gray-300 rounded px-2 py-1 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                  <option value="all" selected>All</option>
+                  <option value="movie">Movie</option>
+                  <option value="tv">TV Show</option>
+                  <option value="documentary">Documentary</option>
+                </select>
+              </div>
+              <button id="toggle-favorites" class="flex items-center gap-2 bg-[#1f2833] text-[#fdf6e3] px-8 py-4 rounded-full shadow-lg font-bold hover:scale-103 hover:bg-[#232f3e] transition drop-shadow-lg ml-3">
                 <span class="tracking-wide text-base">Hide Lists</span>
               </button>
             </div>
+
           </div>
           <!-- Loading/Error Message -->
           <div id="message" class="mb-4 text-center text-red-600"></div>
           <!-- Search Results -->
           <div>
-            <h1 class="text-2xl font-bold mb-2">The Trending Movies</h1>
+            <h1 class="text-3xl font-bold mb-6">Trending Content</h1>
             <div id="results" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
           </div>
         </section>
