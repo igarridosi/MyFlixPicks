@@ -155,7 +155,7 @@ if (released) {
     : `https://www.themoviedb.org/tv/${movie.id}`;
     tmdbBtn.target = '_blank';
     tmdbBtn.rel = 'noopener noreferrer';
-    tmdbBtn.className = 'bg-green-600 text-white px-3 py-1 rounded hover:bg-green-800 mb-2 transition ml-2 inline-block text-center';
+    tmdbBtn.className = 'bg-[#1CD2AE] text-white px-3 py-1 rounded hover:bg-[#029CD5] mb-2 transition ml-2 inline-block text-center';
     tmdbBtn.textContent = 'View on TMDB';
     card.appendChild(tmdbBtn);
 }
