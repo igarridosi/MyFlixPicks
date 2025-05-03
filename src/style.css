@@ -67,6 +67,9 @@ body::before {
   filter: blur(5px);
   z-index: -1;
   transition: background-image 0.3s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .dark body::before {
@@ -197,3 +200,33 @@ input::placeholder {
   background-color: #96969683 !important;
   color: var(--color-darkblue) !important;
 }
+
+
+
+@media (max-width: 768px) {
+  .filter-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .filter-bar-row label {
+    min-width: 60px;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    text-align: right;
+  }
+  .filter-bar-row input,
+  .filter-bar-row select {
+    flex: 1 1 0;
+    min-width: 120px;
+    max-width: 200px;
+  }
+  body::before {
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* slightly less blur for mobile if desired */
+  }
+}
+
+

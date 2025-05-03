@@ -95,7 +95,7 @@ const inAnyList = lists.some(list => list.movies.some(m => m.id === movie.id));
 // Add to List (+) button (only if not in any list)
 if (!inAnyList) {
     const addBtn = document.createElement('button');
-    addBtn.className = 'absolute top-1 left-13 bg-dishmaster text-darkblue rounded-full w-9 h-9 flex items-center justify-center shadow hover:scale-105 transition z-20';
+    addBtn.className = 'absolute top-1 left-10 md:left-13 bg-dishmaster text-darkblue rounded-full w-9 h-9 flex items-center justify-center shadow hover:scale-105 transition z-20';
     addBtn.innerHTML = `<span class="text-xl font-bold">+</span>`;
     addBtn.title = 'Save to list';
     addBtn.onclick = e => {
