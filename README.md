@@ -2,6 +2,9 @@
 
 A modern movie and TV show discovery app built with **Vanilla JavaScript, HTML, and CSS**. Search, browse, and organize your favorite content using The Movie Database (TMDB) API. Favorites and custom lists are saved in your browser using `localStorage`.
 
+## DeepWiki
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/igarridosi/MyFlixPicks)
+
 ## Features
 - Search for movies and TV shows via TMDB API
 - Trending content on homepage
